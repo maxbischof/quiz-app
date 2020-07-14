@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/maxbischof/quiz-app#readme",
   "dependencies": {
+    "node-sass": "^4.14.1",
     "serve": "^11.3.2"
   }
 }
