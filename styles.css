@@ -5,11 +5,11 @@
 }
 
 .main__card__bookmark{
-  border:       10px solid black;        /* All borders set */
-  border-top:  0;                      /* Remove left border */
-  border-bottom: 10px solid transparent; /* Right transparent */
-  height:        30px;
-  width: 0;              /* Increase element Width */
+  border: 10px solid black;
+  border-top: 0;
+  border-bottom: 10px solid transparent;
+  height: 30px;
+  width: 0;
 }
 
 .main__card__tag {
@@ -19,6 +19,6 @@
 }
 
 img {
-    border-radius: 50%;
-    width: 120px;
+  border-radius: 50%;
+  width: 120px;
 }
