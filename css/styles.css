@@ -1,20 +1,2 @@
-.main__card {
-  background-color: lightgrey;
-  padding: 20px 20px 20px 20px;
-  margin: 0 0 40px 0; }
-
-.main__card__bookmark {
-  border: 10px solid black;
-  border-top: 0;
-  border-bottom: 10px solid transparent;
-  height: 30px;
-  width: 0; }
-
-.main__card__tag {
-  background-color: white;
-  border: 2px solid black;
-  padding: 5px 5px 5px 5px; }
-
-img {
-  border-radius: 50%;
-  width: 120px; }
+body {
+  font-size: 112.5%; }
