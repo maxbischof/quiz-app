@@ -56,13 +56,7 @@
 	font-size: 14px;
 }
 
-.card__button::after {
-  content:">";
-  position: absolute;
-  right: 25px;
-}
-
-.create__button__submit {
+.button {
   background-color:$green;
   color: white;
   height: 48px;
@@ -71,7 +65,13 @@
   padding: 5px 10px 5px 10px;
   border: 1px solid transparent;
   font-size: 90%;
+  display: block;
 }
+
+.button.bg-salmon {
+	background-color: $salmon;
+}
+
 
 .create__input--small {
   width: 100%;
