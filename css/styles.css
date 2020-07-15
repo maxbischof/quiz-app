@@ -13,16 +13,23 @@ body {
 header {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  position: sticky;
-  top: 0;
   background-color: white;
-  z-index: 100; }
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+  font-size: 80%; }
+
+header h1 {
+  margin: 0px;
+  padding: 20px 0 20px 0; }
 
 main {
   grid-column: 2 / 2;
   grid-row: 2/2; }
 
 footer {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   border-top: 1px solid #dee2e6;
@@ -66,3 +73,19 @@ footer {
 
 .footer__icon {
   width: 25px; }
+
+.card__button {
+  background-color: #edf6f9;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+  min-height: 48px;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px; }
+
+.card__button::after {
+  content: ">";
+  position: absolute;
+  right: 25px; }
