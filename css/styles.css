@@ -19,7 +19,8 @@ header {
   grid-row: 1 / 2;
   position: sticky;
   top: 0;
-  background-color: white; }
+  background-color: white;
+  z-index: 100; }
 
 main {
   grid-column: 2 / 2;
