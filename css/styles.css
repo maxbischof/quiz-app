@@ -6,7 +6,8 @@ body {
   margin: 0;
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 10% 80% 10%; }
+  grid-template-columns: 10% 80% 10%;
+  font-family: 'Open Sans', sans-serif; }
 
 img {
   border-radius: 50%;
