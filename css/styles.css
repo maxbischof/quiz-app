@@ -7,12 +7,11 @@ body {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 10% 80% 10%;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  color: #343a40; }
 
 header {
-  text-align: center;
-  border-bottom: 1px solid black;
-  grid-column: 1 / 4;
+  grid-column: 2 / 3;
   grid-row: 1 / 2;
   position: sticky;
   top: 0;
