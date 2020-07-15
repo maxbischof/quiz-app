@@ -4,7 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="noopener noreferrer" />
         <title>Quiz-App</title> 
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet"> 
     </head>
 
     <body>
@@ -15,26 +16,22 @@
         <main>
             <form action="/">
                 <h2>Add question</h2>
-                <label for="question">Enter question</label>
-                <input type="text" id="question" name="question"><br><br>
+                <textarea class="create__input--big" type="text" id="question" name="question"></textarea>
 
                 <h2>Add answer</h2>
-                <label for="answer">Enter answer</label>
-                <input type="text" id="answer" name="answer"><br><br>
-
+                <textarea class="create__input--big" type="text" id="answer" name="answer"></textarea>
                 <h2>Add tags</h2>
-                <label for="tags">Enter tags</label>
-                <input type="text" id="tags" name="tags"><br><br>
+                <textarea class="create__input--small mar-bot-20" type="text" id="tags" name="tags"></textarea>
 
-                <input type="submit" value="Save question">
+                <input class="create__button__submit" type="submit" value="Save question">
             </form>
         </main>
 
         <footer>
-            <a href="/">home</a>
-            <a href="/bookmarks.html">bookmarks</a>
-            <a href="/create.html">create</a>
-            <a href="/profil.html">profil</a>
+            <a href="/"><img class="footer__icon" src="img/home.png" alt="home"></a>
+            <a href="/bookmarks.html"><img class="footer__icon" src="img/star.png" alt="bookmarks"></a>
+            <a href="/create.html"><img class="footer__icon" src="img/edit.png" alt="create_question"></a>
+            <a href="/profil.html"><img class="footer__icon" src="img/woman.png" alt="profil"></a>
          </footer>
     </body>
 </html>
