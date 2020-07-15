@@ -24,7 +24,12 @@ main {
 
 footer {
   grid-column: 1 / 4;
-  grid-row: 3 / 4; }
+  grid-row: 3 / 4;
+  border-top: 1px solid #dee2e6;
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0 15px 0; }
 
 .pad-5 {
   padding: 5px 5px 5px 5px; }
@@ -58,3 +63,6 @@ footer {
 
 .card__img {
   max-width: 100%; }
+
+.footer__icon {
+  width: 25px; }
