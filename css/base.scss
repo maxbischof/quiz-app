@@ -1,8 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-size: 112.5%;
+	margin: 0;
 }
 
 img {
   border-radius: 50%;
   width: 120px;
+}
+
+header {
+	text-align: center;
+	border-bottom: 1px solid black;
 }
