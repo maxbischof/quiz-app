@@ -16,7 +16,10 @@ header {
   text-align: center;
   border-bottom: 1px solid black;
   grid-column: 1 / 4;
-  grid-row: 1 / 2; }
+  grid-row: 1 / 2;
+  position: sticky;
+  top: 0;
+  background-color: white; }
 
 main {
   grid-column: 2 / 2;
