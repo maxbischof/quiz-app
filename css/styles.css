@@ -124,3 +124,6 @@ summary {
   width: 100%;
   height: 100px;
   resize: vertical; }
+
+.display-none {
+  display: none; }
