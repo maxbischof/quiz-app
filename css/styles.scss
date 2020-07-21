@@ -48,12 +48,19 @@
   color: $grey;
   padding: 6px 12px;
   border: 1px solid transparent;
-  border-bottom: 1px solid $salmon;
-  border-top: 1px solid $salmon;
   min-height: 48px;
-  width: 100%;
+  width: 100%; 
 	padding: 6px 12px;
-	font-size: 14px;
+	font-size: 18px;
+}
+
+.card__button img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
 }
 
 .button {

@@ -43,8 +43,8 @@ footer {
   justify-content: space-evenly;
   padding: 15px 0 15px 0; }
 
-summary {
-  text-align: center; }
+hr {
+  color: #E29578; }
 
 .pad-5 {
   padding: 5px 5px 5px 5px; }
@@ -95,12 +95,18 @@ summary {
   color: #343a40;
   padding: 6px 12px;
   border: 1px solid transparent;
-  border-bottom: 1px solid #E29578;
-  border-top: 1px solid #E29578;
   min-height: 48px;
   width: 100%;
   padding: 6px 12px;
-  font-size: 14px; }
+  font-size: 18px; }
+
+.card__button img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
 
 .button {
   background-color: #006d77;

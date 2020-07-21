@@ -4,6 +4,7 @@ const toggleAnswer = () => {
 
 button.addEventListener('click', () => {
   answer.classList.remove('display-none')
+  button.classList.add('display-none')
   console.log('click')
 })
 }
