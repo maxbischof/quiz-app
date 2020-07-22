@@ -2,18 +2,17 @@
   box-sizing: border-box; }
 
 html {
-  margin: 0;
-  height: 100%; }
+  margin: 0; }
 
 body {
   font-size: 112.5%;
   margin: 0;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   grid-template-columns: 10% 80% 10%;
   font-family: 'Open Sans', sans-serif;
   color: #343a40;
-  min-height: 100vh; }
+  height: 100%; }
 
 h3 {
   font-size: 70%; }
@@ -23,7 +22,6 @@ header {
   grid-row: 1 / 2;
   background-color: white;
   border-bottom: 1px solid #dee2e6;
-  margin-bottom: 20px;
   font-size: 80%; }
 
 header h1 {
@@ -32,14 +30,15 @@ header h1 {
 
 main {
   grid-column: 2 / 2;
-  grid-row: 2 / 2; }
+  grid-row: 2 / 2;
+  overflow-y: scroll;
+  padding-top: 20px; }
 
 footer {
   background-color: white;
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   border-top: 1px solid #dee2e6;
-  margin: 20px 0 0 0;
   display: flex;
   justify-content: space-evenly;
   padding: 15px 0 15px 0; }
