@@ -1,21 +1,20 @@
-const buttonAnswer = document.querySelector('.answer-button')
-const answer = document.querySelector('.answer-text')
+const buttonAnswer = get('.answer-button')
+const answer = get('.answer-text')
 
 buttonAnswer.addEventListener('click', () => {
   answer.classList.remove('display-none')
   buttonAnswer.classList.add('display-none')
-  console.log('click')
 })
 
-const buttonQuestions = document.querySelector('.footer__icon--questions')
-const buttonBookmarks = document.querySelector('.footer__icon--bookmarks')
-const buttonCreate = document.querySelector('.footer__icon--create')
-const buttonProfile = document.querySelector('.footer__icon--profile')
+const buttonQuestions = get('.footer__icon--questions')
+const buttonBookmarks = get('.footer__icon--bookmarks')
+const buttonCreate = get('.footer__icon--create')
+const buttonProfile = get('.footer__icon--profile')
 
-const pageQuestions = document.querySelector('.page__questions')
-const pageBookmarks = document.querySelector('.page__bookmarks')
-const pageCreate = document.querySelector('.page__create')
-const pageProfile = document.querySelector('.page__profile')
+const pageQuestions = get('.page__questions')
+const pageBookmarks = get('.page__bookmarks')
+const pageCreate = get('.page__create')
+const pageProfile = get('.page__profile')
 let currentPage = pageQuestions
 
 buttonQuestions.addEventListener('click', () => {
@@ -41,3 +40,7 @@ buttonProfile.addEventListener('click', () => {
   currentPage.classList.add('display-none')
   currentPage = pageProfile
 })
+
+function get (selector) {
+  document.querySelector(selector)
+}
