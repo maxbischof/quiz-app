@@ -1,38 +1,47 @@
 "use strict";
 
-var buttonAnswer = document.querySelector('.answer-button');
-var answer = document.querySelector('.answer-text');
+var buttonAnswer = get('.answer-button');
+var answer = get('.answer-text');
 buttonAnswer.addEventListener('click', function () {
   answer.classList.remove('display-none');
   buttonAnswer.classList.add('display-none');
-  console.log('click');
 });
-var buttonQuestions = document.querySelector('.footer__icon--questions');
-var buttonBookmarks = document.querySelector('.footer__icon--bookmarks');
-var buttonCreate = document.querySelector('.footer__icon--create');
-var buttonProfile = document.querySelector('.footer__icon--profile');
-var pageQuestions = document.querySelector('.page__questions');
-var pageBookmarks = document.querySelector('.page__bookmarks');
-var pageCreate = document.querySelector('.page__create');
-var pageProfile = document.querySelector('.page__profile');
+var buttonQuestions = get('.footer__icon--questions');
+var buttonBookmarks = get('.footer__icon--bookmarks');
+var buttonCreate = get('.footer__icon--create');
+var buttonProfile = get('.footer__icon--profile');
+var pageQuestions = get('.page__questions');
+var pageBookmarks = get('.page__bookmarks');
+var pageCreate = get('.page__create');
+var pageProfile = get('.page__profile');
 var currentPage = pageQuestions;
 buttonQuestions.addEventListener('click', function () {
-  pageQuestions.classList.remove('display-none');
-  currentPage.classList.add('display-none');
-  currentPage = pageQuestions;
+  changePage(pageQuestions);
+  setTitle('Questions');
 });
 buttonBookmarks.addEventListener('click', function () {
-  pageBookmarks.classList.remove('display-none');
-  currentPage.classList.add('display-none');
-  currentPage = pageBookmarks;
+  changePage(pageBookmarks);
+  setTitle('Bookmarks');
 });
 buttonCreate.addEventListener('click', function () {
-  pageCreate.classList.remove('display-none');
-  currentPage.classList.add('display-none');
-  currentPage = pageCreate;
+  changePage(pageCreate);
+  setTitle('Create question');
 });
 buttonProfile.addEventListener('click', function () {
-  pageProfile.classList.remove('display-none');
-  currentPage.classList.add('display-none');
-  currentPage = pageProfile;
+  changePage(pageProfile);
+  setTitle('Profile');
 });
+
+function setTitle(title) {
+  document.querySelector('h1').innerHTML = title;
+}
+
+function changePage(page) {
+  page.classList.remove('display-none');
+  currentPage.classList.add('display-none');
+  currentPage = page;
+}
+
+function get(selector) {
+  return document.querySelector(selector);
+}

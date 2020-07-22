@@ -19,19 +19,27 @@ let currentPage = pageQuestions
 
 buttonQuestions.addEventListener('click', () => {
   changePage(pageQuestions)
+  setTitle('Questions')
 })
 
 buttonBookmarks.addEventListener('click', () => {
   changePage(pageBookmarks)
+  setTitle('Bookmarks')
 })
 
 buttonCreate.addEventListener('click', () => {
   changePage(pageCreate)
+  setTitle('Create question')
 })
 
 buttonProfile.addEventListener('click', () => {
   changePage(pageProfile)
+  setTitle('Profile')
 })
+
+function setTitle (title) {
+  document.querySelector('h1').innerHTML = title
+}
 
 function changePage (page) {
     page.classList.remove('display-none')
@@ -40,5 +48,5 @@ function changePage (page) {
 }
 
 function get (selector) {
-  document.querySelector(selector)
+  return document.querySelector(selector)
 }
