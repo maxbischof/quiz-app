@@ -11,12 +11,8 @@ html {
 body {
 	font-size: 112.5%;
 	margin: 0;
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	grid-template-columns: 10% 80% 10%;
 	font-family: 'Open Sans', sans-serif;
-	color: $grey; 
-	min-height: 100vh;
+	color: $grey;
 }
 
 h3 {

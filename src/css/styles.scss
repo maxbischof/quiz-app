@@ -2,6 +2,13 @@
 @import 'colors';
 @import 'utilities';
 
+.page {
+  display: grid;
+	grid-template-rows: auto 1fr auto;
+  grid-template-columns: 10% 80% 10%;
+	min-height: 100vh;
+}
+
 .card {
   background-color: white;
   position: relative;
