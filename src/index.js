@@ -18,28 +18,26 @@ const pageProfile = get('.page__profile')
 let currentPage = pageQuestions
 
 buttonQuestions.addEventListener('click', () => {
-  pageQuestions.classList.remove('display-none')
-  currentPage.classList.add('display-none')
-  currentPage = pageQuestions
+  changePage(pageQuestions)
 })
 
 buttonBookmarks.addEventListener('click', () => {
-  pageBookmarks.classList.remove('display-none')
-  currentPage.classList.add('display-none')
-  currentPage = pageBookmarks
+  changePage(pageBookmarks)
 })
 
 buttonCreate.addEventListener('click', () => {
-  pageCreate.classList.remove('display-none')
-  currentPage.classList.add('display-none')
-  currentPage = pageCreate
+  changePage(pageCreate)
 })
 
 buttonProfile.addEventListener('click', () => {
-  pageProfile.classList.remove('display-none')
-  currentPage.classList.add('display-none')
-  currentPage = pageProfile
+  changePage(pageProfile)
 })
+
+function changePage (page) {
+    page.classList.remove('display-none')
+    currentPage.classList.add('display-none')
+    currentPage = page
+}
 
 function get (selector) {
   document.querySelector(selector)
