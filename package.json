@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel live-server sass:watch",
     "serve": "serve .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass css/styles.scss css/styles.css",
+    "sass": "node-sass src/css/styles.scss src/css/styles.css",
     "sass:watch": "npm run sass -- -w",
 	"live-server": "live-server"
   },
