@@ -6,13 +6,18 @@
 
 html {
 	margin: 0;
+	height: 100%;
 }
 
 body {
 	font-size: 112.5%;
 	margin: 0;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 10% 80% 10%;
 	font-family: 'Open Sans', sans-serif;
-	color: $grey;
+	color: $grey; 
+	min-height: 100vh;
 }
 
 h3 {
@@ -35,7 +40,7 @@ header h1 {
 
 main {
 	grid-column: 2 / 2;
-	grid-row: 2/2;
+	grid-row: 2 / 2;
 }
 
 footer {

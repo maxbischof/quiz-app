@@ -2,13 +2,6 @@
 @import 'colors';
 @import 'utilities';
 
-.page {
-  display: grid;
-	grid-template-rows: auto 1fr;
-  grid-template-columns: 10% 80% 10%;
-	min-height: 100vh;
-}
-
 .card {
   background-color: white;
   position: relative;
@@ -90,7 +83,6 @@
 	background-color: $salmon;
 }
 
-
 .create__input--small {
   width: 100%;
   resize: vertical;
@@ -100,8 +92,4 @@
   width: 100%;
   height: 100px;
   resize: vertical;
-}
-
-.display-none {
-  display: none;
 }
