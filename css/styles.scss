@@ -54,6 +54,10 @@
 	font-size: 18px;
 }
 
+.card__button:hover {
+  cursor: pointer;
+}
+
 .card__button img {
   display: block;
   margin-right: auto;
