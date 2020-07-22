@@ -37,9 +37,11 @@ function setTitle(title) {
 }
 
 function changePage(page) {
-  page.classList.remove('display-none');
-  currentPage.classList.add('display-none');
-  currentPage = page;
+  if (page != currentPage) {
+    page.classList.remove('display-none');
+    currentPage.classList.add('display-none');
+    currentPage = page;
+  }
 }
 
 function get(selector) {
