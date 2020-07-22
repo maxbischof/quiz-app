@@ -4,7 +4,7 @@
 
 .page {
   display: grid;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr;
   grid-template-columns: 10% 80% 10%;
 	min-height: 100vh;
 }
