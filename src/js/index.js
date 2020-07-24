@@ -1,10 +1,7 @@
-const buttonAnswer = get('.answer-button')
-const answer = get('.answer-text')
+import Card from './card'
+import {get} from './utilities'
 
-buttonAnswer.addEventListener('click', () => {
-  answer.classList.remove('display-none')
-  buttonAnswer.classList.add('display-none')
-})
+Card()
 
 const buttonQuestions = get('.footer__icon--questions')
 const buttonBookmarks = get('.footer__icon--bookmarks')
@@ -47,8 +44,4 @@ function changePage (page) {
     currentPage.classList.add('display-none')
     currentPage = page
   }
-}
-
-function get (selector) {
-  return document.querySelector(selector)
 }
