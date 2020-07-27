@@ -16,9 +16,12 @@ const cards = [
 
 function card () {
   const pageQuestions = get('.page__questions')
+  addCards(cards, pageQuestions)
+}
 
+function addCards (cards, target) {
   cards.forEach(card => {
-    const cardSection = addCard(card, pageQuestions)
+    const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
   })
