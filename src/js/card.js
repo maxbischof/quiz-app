@@ -1,35 +1,35 @@
-import {get} from './utilities'
+import { get } from './utilities'
 import arrowImg from '../../img/arrow.png'
 
 const cards = [
   {
-    question: 'What\'s the biggest animal in the world?',
+    question: "What's the biggest animal in the world?",
     answer: 'The blue whale',
-    tags: ['animals', 'nature', 'world record']
+    tags: ['animals', 'nature', 'world record'],
   },
   {
     question: 'Which country is brie cheese originally from?',
     answer: 'France',
-    tags: ['food', 'culture']
-  }
+    tags: ['food', 'culture'],
+  },
 ]
 
-function card () {
+function card() {
   const pageQuestions = get('.page__questions')
   addCards(cards, pageQuestions)
 }
 
-export function addCards (cards, target) {
-  cards.forEach(card => {
+export function addCards(cards, target) {
+  cards.forEach((card) => {
     const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
   })
 }
 
-function addCard (card, target) {
+function addCard(card, target) {
   let cardSection = document.createElement('section')
-    
+
   cardSection.innerHTML = /*html*/ `
     <img
       class="card__img"
@@ -59,12 +59,12 @@ function addCard (card, target) {
     </div>
   `
   cardSection.className = 'card mar-bot-30'
-  target.appendChild(cardSection) 
+  target.appendChild(cardSection)
 
   return cardSection
 }
 
-function showAnswer (target) {
+function showAnswer(target) {
   const buttonAnswer = target.querySelector('.answer-button')
   const answer = target.querySelector('.answer-text')
 
@@ -74,14 +74,14 @@ function showAnswer (target) {
   })
 }
 
-function addTags (tags, target) {
+function addTags(tags, target) {
   const tagsSection = target.querySelector('.tags')
-    tags.forEach(tag => {
-      const span = document.createElement('span')
-      span.className = 'card__tag pad-5'
-      span.textContent = tag
-      tagsSection.appendChild(span)
-    })
+  tags.forEach((tag) => {
+    const span = document.createElement('span')
+    span.className = 'card__tag pad-5'
+    span.textContent = tag
+    tagsSection.appendChild(span)
+  })
 }
 
 export default card

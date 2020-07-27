@@ -1,6 +1,6 @@
-import {get} from './utilities'
+import { get } from './utilities'
 
-function nav () {
+function nav() {
   const buttonQuestions = get('.footer__icon--questions')
   const buttonBookmarks = get('.footer__icon--bookmarks')
   const buttonCreate = get('.footer__icon--create')
@@ -32,12 +32,12 @@ function nav () {
     setTitle('Profile')
   })
 
-  function setTitle (title) {
+  function setTitle(title) {
     document.querySelector('h1').innerHTML = title
   }
 
-  function changePage (page) {
-    if (page!=currentPage) {
+  function changePage(page) {
+    if (page != currentPage) {
       page.classList.remove('display-none')
       currentPage.classList.add('display-none')
       currentPage = page

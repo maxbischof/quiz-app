@@ -1,59 +1,58 @@
 @import 'colors';
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	margin: 0;
+  margin: 0;
 }
 
 body {
-	font-size: 112.5%;
-	margin: 0;
-	display: grid;
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 4% 92% 4%;
-	font-family: 'Open Sans', sans-serif;
-	color: $grey; 
+  font-size: 112.5%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 4% 92% 4%;
+  font-family: 'Open Sans', sans-serif;
+  color: $grey;
   height: 100%;
 }
 
 h3 {
-	font-size: 70%;
+  font-size: 70%;
 }
 
 header {
-	grid-column: 2 / 3;
-	grid-row: 1 / 2;
-	background-color: white;
-	border-bottom: 1px solid $light-grey;
-	font-size: 80%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-color: white;
+  border-bottom: 1px solid $light-grey;
+  font-size: 80%;
 }
 
 header h1 {
-	margin: 0px;
-	padding: 20px 0 20px 0;
+  margin: 0px;
+  padding: 20px 0 20px 0;
 }
 
 main {
-	grid-column: 2 / 2;
-	grid-row: 2 / 2;
-	overflow-y: scroll;
-	padding-top: 20px;
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+  overflow-y: scroll;
+  padding-top: 20px;
 }
 
 footer {
-	background-color: white;
-	grid-column: 1 / 4;
-	grid-row: 3 / 4;
-	border-top: 1px solid $light-grey;
-	display: flex;
-	justify-content: space-evenly;
-	padding: 15px 0 15px 0;
+  background-color: white;
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  border-top: 1px solid $light-grey;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0 15px 0;
 }
 
 hr {
-	color: $salmon;
+  color: $salmon;
 }
-
