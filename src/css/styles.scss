@@ -42,6 +42,11 @@
 .footer__icon {
   width: 25px;
   cursor: pointer;
+  filter: contrast(10%);
+}
+
+.footer__icon--active {
+  filter: contrast(100%);
 }
 
 .card__button {
