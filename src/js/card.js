@@ -19,7 +19,7 @@ function card () {
   addCards(cards, pageQuestions)
 }
 
-function addCards (cards, target) {
+export function addCards (cards, target) {
   cards.forEach(card => {
     const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
