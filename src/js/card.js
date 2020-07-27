@@ -14,14 +14,6 @@ const cards = [
 ]
 
 function card () {
-  const buttonAnswer = get('.answer-button')
-  const answer = get('.answer-text')
-
-  buttonAnswer.addEventListener('click', () => {
-    answer.classList.remove('display-none')
-    buttonAnswer.classList.add('display-none')
-  })
-
   const pageQuestions = get('.page__questions')
 
   cards.forEach(card => {
@@ -40,7 +32,10 @@ function card () {
         </h2>
 
         <hr>
-        <button class="card__button answer-button">Show answer <img src="img/arrow.png" alt="arrow"></button>
+        <button class="card__button answer-button">
+          Show answer 
+          <img src="../../img/arrow.png" alt="arrow">
+        </button>
 
         <p class="card__p display-none answer-text">
           ${card.answer}
@@ -56,13 +51,22 @@ function card () {
     pageQuestions.appendChild(cardSection)
 
     addTags(card.tags, cardSection)
+    showAnswer(cardSection)
   })
 }
 
+function showAnswer (target) {
+  const buttonAnswer = target.querySelector('.answer-button')
+  const answer = target.querySelector('.answer-text')
 
+  buttonAnswer.addEventListener('click', () => {
+    answer.classList.remove('display-none')
+    buttonAnswer.classList.add('display-none')
+  })
+}
 
-function addTags (tags, section) {
-  const tagsSection = section.querySelector('.tags')
+function addTags (tags, target) {
+  const tagsSection = target.querySelector('.tags')
     tags.forEach(tag => {
       const span = document.createElement('span')
       span.className = 'card__tag pad-5'
