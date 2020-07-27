@@ -1,4 +1,5 @@
 import {get} from './utilities'
+import arrowImg from '../../img/arrow.png'
 
 const cards = [
   {
@@ -34,7 +35,7 @@ function card () {
         <hr>
         <button class="card__button answer-button">
           Show answer 
-          <img src="../../img/arrow.png" alt="arrow">
+          <img src=${arrowImg} alt="arrow">
         </button>
 
         <p class="card__p display-none answer-text">
