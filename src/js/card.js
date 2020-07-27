@@ -18,42 +18,47 @@ function card () {
   const pageQuestions = get('.page__questions')
 
   cards.forEach(card => {
-    let cardSection = document.createElement('section')
-    
-    cardSection.innerHTML = /*html*/ `
-      <img
-        class="card__img"
-        src="https://source.unsplash.com/random"
-        alt="question_picture"
-      />
-
-      <div class="card__txt pad-20">
-        <h2 class="card__h2">
-          ${card.question}
-        </h2>
-
-        <hr>
-        <button class="card__button answer-button">
-          Show answer 
-          <img src=${arrowImg} alt="arrow">
-        </button>
-
-        <p class="card__p display-none answer-text">
-          ${card.answer}
-        </p>
-        <hr>
-        
-        <h3>Tags</h3>
-        <div class='tags'>
-        </div>
-      </div>
-    `
-    cardSection.className = 'card mar-bot-30'
-    pageQuestions.appendChild(cardSection)
-
+    const cardSection = addCard(card, pageQuestions)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
   })
+}
+
+function addCard (card, target) {
+  let cardSection = document.createElement('section')
+    
+  cardSection.innerHTML = /*html*/ `
+    <img
+      class="card__img"
+      src="https://source.unsplash.com/random"
+      alt="question_picture"
+    />
+
+    <div class="card__txt pad-20">
+      <h2 class="card__h2">
+        ${card.question}
+      </h2>
+
+      <hr>
+      <button class="card__button answer-button">
+        Show answer 
+        <img src=${arrowImg} alt="arrow">
+      </button>
+
+      <p class="card__p display-none answer-text">
+        ${card.answer}
+      </p>
+      <hr>
+      
+      <h3>Tags</h3>
+      <div class='tags'>
+      </div>
+    </div>
+  `
+  cardSection.className = 'card mar-bot-30'
+  target.appendChild(cardSection) 
+
+  return cardSection
 }
 
 function showAnswer (target) {
