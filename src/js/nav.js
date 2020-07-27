@@ -54,7 +54,6 @@ function setActiveFooterIcon (activeClass) {
   const icons = getAll('.footer__icon')
   icons.forEach(icon => {
     icon.classList.toggle('footer__icon--active', icon.classList.contains(activeClass))
-    console.log(icon.classList.contains(activeClass))
   })
 }
 
