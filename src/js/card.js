@@ -15,7 +15,7 @@ const cards = [
 ]
 
 function card() {
-  const pageQuestions = get('.page__questions')
+  const pageQuestions = get('[data-js=\'questions\']')
   addCards(cards, pageQuestions)
 }
 

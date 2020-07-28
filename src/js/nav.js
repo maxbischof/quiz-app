@@ -11,7 +11,7 @@ function nav() {
     button.addEventListener('click', () => {
       currentPage = changePage(nextPage, currentPage)
       setTitle(capitalizeFirstLetter(pageID))
-      setActiveFooterIcon('footer__icon--' + pageID)
+      setActiveFooterIcon(pageID, buttons)
     })
   })
 }
@@ -28,10 +28,9 @@ function setTitle(title) {
   document.querySelector('h1').innerHTML = title
 }
 
-function setActiveFooterIcon (activeClass) {
-  const icons = getAll('.footer__icon')
-  icons.forEach(icon => {
-    icon.classList.toggle('footer__icon--active', icon.classList.contains(activeClass))
+function setActiveFooterIcon (activeClass, buttons) {
+  buttons.forEach(button => {
+    button.classList.toggle('footer__icon--active', button.dataset.js===activeClass)
   })
 }
 

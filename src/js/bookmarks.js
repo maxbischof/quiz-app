@@ -15,7 +15,7 @@ const cards = [
 ]
 
 function bookmarks() {
-  const pageBookmarks = get('.page__bookmarks')
+  const pageBookmarks = get('[data-js=\'bookmarks\']')
   addCards(cards, pageBookmarks)
 }
 
