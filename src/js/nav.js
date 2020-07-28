@@ -2,13 +2,11 @@ import { get, getAll } from './utilities'
 
 function nav() {
   const buttons = getAll('.footer__icon')
-  const pages = document.querySelectorAll('[class^="page__"]');
-  let currentPage = pages[0]
+  let currentPage = get('[data-js=\'questions\']')
 
   buttons.forEach(button => {
     const pageID = button.dataset.js
-    const nextPageSelector = '[data-js=\'' + pageID + '\']'
-    const nextPage = get(nextPageSelector)
+    const nextPage = get('[data-js=\'' + pageID + '\']')
     
     button.addEventListener('click', () => {
       currentPage = changePage(nextPage, currentPage)
