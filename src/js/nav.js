@@ -14,35 +14,35 @@ function nav() {
   let currentPage = pageQuestions
 
   buttonQuestions.addEventListener('click', () => {
-    changePage(pageQuestions)
+    currentPage = changePage(pageQuestions, currentPage)
     setTitle('Questions')
     setActiveFooterIcon('footer__icon--questions')
   })
 
   buttonBookmarks.addEventListener('click', () => {
-    changePage(pageBookmarks)
+    currentPage = changePage(pageBookmarks, currentPage)
     setTitle('Bookmarks')
     setActiveFooterIcon('footer__icon--bookmarks')
   })
 
   buttonCreate.addEventListener('click', () => {
-    changePage(pageCreate)
+    currentPage = changePage(pageCreate, currentPage)
     setTitle('Create question')
     setActiveFooterIcon('footer__icon--create')
   })
 
   buttonProfile.addEventListener('click', () => {
-    changePage(pageProfile)
+    currentPage = changePage(pageProfile, currentPage)
     setTitle('Profile')
     setActiveFooterIcon('footer__icon--profile')
   })
+}
 
-  function changePage(page) {
-    if (page != currentPage) {
-      page.classList.remove('display-none')
-      currentPage.classList.add('display-none')
-      currentPage = page
-    }
+function changePage(nextPage, currentPage) {
+  if (nextPage != currentPage) {
+    nextPage.classList.remove('display-none')
+    currentPage.classList.add('display-none')
+    return nextPage
   }
 }
 
