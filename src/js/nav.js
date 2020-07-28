@@ -1,4 +1,4 @@
-import { get, getAll } from './utilities'
+import { get, getAll, capitalizeFirstLetter } from './utilities'
 
 function nav() {
   const buttons = getAll('.footer__icon')
@@ -32,10 +32,6 @@ function setActiveFooterIcon (activeClass, buttons) {
   buttons.forEach(button => {
     button.classList.toggle('footer__icon--active', button.dataset.js===activeClass)
   })
-}
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export default nav
