@@ -14,10 +14,15 @@ const cards = [
   },
 ]
 
-export function card() {
-  const pageQuestions = get('[data-js=\'questions\']')
-  pageQuestions.innerHTML = ''
-  addCards(cards, pageQuestions)
+const pageQuestions = get('[data-js=\'questions\']')
+
+export function card (target = pageQuestions) {
+  target.innerHTML = ''
+  if (target === pageQuestions) {
+    addCards(cards, target)
+  } else {
+    addCards(cards.filter(card => card.bookmark), target)
+  }
 }
 
 export function addCards(cards, target) {
@@ -25,11 +30,11 @@ export function addCards(cards, target) {
     const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
-    bookmark(cardSection, cards.indexOf(card))
+    bookmarkCard(cardSection, cards.indexOf(card))
   })
 }
 
-function bookmark (cardSection, index) {
+function bookmarkCard (cardSection, index) {
   const bookmarkButton = cardSection.querySelector('[data-js=\'bookmark__button\']')
   
   bookmarkButton.addEventListener('click', () => {

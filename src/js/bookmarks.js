@@ -1,22 +1,9 @@
-import { addCards } from './card'
 import { get } from './utilities'
-
-const cards = [
-  {
-    question: "What's the biggest animal in the world?",
-    answer: 'The blue whale',
-    tags: ['animals', 'nature', 'world record'],
-  },
-  {
-    question: 'Which country is brie cheese originally from?',
-    answer: 'France',
-    tags: ['food', 'culture'],
-  },
-]
+import { card } from './card'
 
 function bookmarks() {
   const pageBookmarks = get('[data-js=\'bookmarks\']')
-  addCards(cards, pageBookmarks)
+  card(pageBookmarks)
 }
 
 export default bookmarks

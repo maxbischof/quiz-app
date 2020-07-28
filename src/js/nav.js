@@ -1,5 +1,6 @@
 import { get, getAll, capitalizeFirstLetter } from './utilities'
 import { card } from './card'
+import bookmarks from './bookmarks'
 
 function nav() {
   const buttons = getAll('.footer__icon')
@@ -13,8 +14,10 @@ function nav() {
       currentPage = changePage(nextPage, currentPage)
       setTitle(capitalizeFirstLetter(pageID))
       setActiveFooterIcon(pageID, buttons)
-      if(pageID === 'questions'){
+      if (pageID === 'questions') {
         card()
+      } else if (pageID === 'bookmarks') {
+        bookmarks()
       }
     })
   })
