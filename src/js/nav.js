@@ -1,40 +1,20 @@
 import { get, getAll } from './utilities'
 
 function nav() {
-  const buttonQuestions = get('.footer__icon--questions')
-  const buttonBookmarks = get('.footer__icon--bookmarks')
-  const buttonCreate = get('.footer__icon--create')
-  const buttonProfile = get('.footer__icon--profile')
+  const buttons = getAll('.footer__icon')
+  const pages = document.querySelectorAll('[class^="page__"]');
+  let currentPage = pages[0]
 
-  const pageQuestions = get('.page__questions')
-  const pageBookmarks = get('.page__bookmarks')
-  const pageCreate = get('.page__create')
-  const pageProfile = get('.page__profile')
-
-  let currentPage = pageQuestions
-
-  buttonQuestions.addEventListener('click', () => {
-    currentPage = changePage(pageQuestions, currentPage)
-    setTitle('Questions')
-    setActiveFooterIcon('footer__icon--questions')
-  })
-
-  buttonBookmarks.addEventListener('click', () => {
-    currentPage = changePage(pageBookmarks, currentPage)
-    setTitle('Bookmarks')
-    setActiveFooterIcon('footer__icon--bookmarks')
-  })
-
-  buttonCreate.addEventListener('click', () => {
-    currentPage = changePage(pageCreate, currentPage)
-    setTitle('Create question')
-    setActiveFooterIcon('footer__icon--create')
-  })
-
-  buttonProfile.addEventListener('click', () => {
-    currentPage = changePage(pageProfile, currentPage)
-    setTitle('Profile')
-    setActiveFooterIcon('footer__icon--profile')
+  buttons.forEach(button => {
+    const pageID = button.dataset.js
+    const nextPageSelector = '[data-js=\'' + pageID + '\']'
+    const nextPage = get(nextPageSelector)
+    
+    button.addEventListener('click', () => {
+      currentPage = changePage(nextPage, currentPage)
+      setTitle(capitalizeFirstLetter(pageID))
+      setActiveFooterIcon('footer__icon--' + pageID)
+    })
   })
 }
 
@@ -55,6 +35,10 @@ function setActiveFooterIcon (activeClass) {
   icons.forEach(icon => {
     icon.classList.toggle('footer__icon--active', icon.classList.contains(activeClass))
   })
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export default nav
