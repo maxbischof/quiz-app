@@ -14,8 +14,9 @@ const cards = [
   },
 ]
 
-function card() {
+export function card() {
   const pageQuestions = get('[data-js=\'questions\']')
+  pageQuestions.innerHTML = ''
   addCards(cards, pageQuestions)
 }
 
@@ -76,7 +77,7 @@ function showAnswer(target) {
 
 function addTags(tags, target) {
   const tagsSection = target.querySelector('.tags')
-  tags.forEach((tag) => {
+  tags?.forEach((tag) => {
     const span = document.createElement('span')
     span.className = 'card__tag pad-5'
     span.textContent = tag
@@ -86,7 +87,6 @@ function addTags(tags, target) {
 
 export function saveCard (question, answer, tags) {
   cards.push({question, answer})
-  console.log(cards)
 }
 
 export default card
