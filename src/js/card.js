@@ -84,4 +84,9 @@ function addTags(tags, target) {
   })
 }
 
+export function saveCard (question, answer, tags) {
+  cards.push({question, answer})
+  console.log(cards)
+}
+
 export default card
