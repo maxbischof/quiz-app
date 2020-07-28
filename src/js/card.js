@@ -25,6 +25,15 @@ export function addCards(cards, target) {
     const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
+    bookmark(cardSection, cards.indexOf(card))
+  })
+}
+
+function bookmark (cardSection, index) {
+  const bookmarkButton = cardSection.querySelector('[data-js=\'bookmark__button\']')
+  
+  bookmarkButton.addEventListener('click', () => {
+    cards[index].bookmark = true
   })
 }
 
@@ -32,6 +41,7 @@ function addCard(card, target) {
   let cardSection = document.createElement('section')
 
   cardSection.innerHTML = /*html*/ `
+    <div data-js='bookmark__button' class="card__bookmark"></div>
     <img
       class="card__img"
       src="https://source.unsplash.com/random"
