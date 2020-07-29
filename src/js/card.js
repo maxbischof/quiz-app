@@ -27,10 +27,7 @@ export function card (target = pageQuestions) {
 
 export function addCards(cards, target) {
   cards.forEach((card) => {
-    const cardSection = addCard(card, target)
-    addTags(card.tags, cardSection)
-    showAnswer(cardSection)
-    bookmarkCard(cardSection, card)
+    addCard(card, target)
   })
 }
 
@@ -80,9 +77,10 @@ function addCard(card, target) {
   `
   cardSection.className = 'card mar-bot-30'
   target.appendChild(cardSection)
-  const bookmark = target.querySelector('.answer-button')
 
-  return cardSection
+  addTags(card.tags, cardSection)
+  showAnswer(cardSection)
+  bookmarkCard(cardSection, card)
 }
 
 function showAnswer(target) {
