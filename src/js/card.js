@@ -101,7 +101,7 @@ function addTags(tags, target) {
 }
 
 export function saveCard (question, answer, tags) {
-  cards.push({question, answer})
+  cards.push({question, answer, tags})
 }
 
 export default card
