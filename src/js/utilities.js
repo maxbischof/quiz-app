@@ -9,3 +9,14 @@ export function getAll(selector, target = document) {
 export function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function createElement({
+  type = 'div', 
+  className = '', 
+  target = document.body
+}) {
+  const el = document.createElement(type)
+  el.className = className
+  target.appendChild(el)
+  return {el}
+}
