@@ -12,18 +12,15 @@
 }
 
 .card__bookmark {
-  border: 15px solid grey;
-  border-top: 0;
-  border-bottom: 15px solid transparent;
   height: 50px;
-  width: 0;
   position: absolute;
   right: 5px;
+  top: -10px;
+  fill: #343a40;
 }
 
 .card__bookmark--active {
-  border: 15px solid black;
-  border-bottom: 15px solid transparent;
+  fill: #ffd726;
 }
 
 .card__tag {
