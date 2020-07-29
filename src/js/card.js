@@ -30,15 +30,19 @@ export function addCards(cards, target) {
     const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
-    bookmarkCard(cardSection, cards.indexOf(card))
+    bookmarkCard(cardSection, cards.indexOf(card), card)
   })
 }
 
-function bookmarkCard (cardSection, index) {
+function bookmarkCard (cardSection, index, card) {
   const bookmarkButton = cardSection.querySelector('[data-js=\'bookmark__button\']')
-  
+  if (card.bookmark === true) {
+    bookmarkButton.classList.add('card__bookmark--active')
+  } 
+    
   bookmarkButton.addEventListener('click', () => {
     cards[index].bookmark = true
+    bookmarkButton.classList.toggle('card__bookmark--active')
   })
 }
 
@@ -76,6 +80,7 @@ function addCard(card, target) {
   `
   cardSection.className = 'card mar-bot-30'
   target.appendChild(cardSection)
+  const bookmark = target.querySelector('.answer-button')
 
   return cardSection
 }
