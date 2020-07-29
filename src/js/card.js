@@ -46,11 +46,13 @@ function bookmarkCard (cardSection, card) {
 function addCard(card, target) {
   let cardSection = document.createElement('section')
 
+  const unsplashURL = 'https://source.unsplash.com/random' + '/' + Math.floor(Math.random() * 100)
+
   cardSection.innerHTML = /*html*/ `
     <div data-js='bookmark__button' class="card__bookmark"></div>
     <img
       class="card__img"
-      src="https://source.unsplash.com/random"
+      src=${unsplashURL}
       alt="question_picture"
     />
 
