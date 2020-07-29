@@ -32,7 +32,7 @@ function changePage(nextPage, currentPage) {
 }
 
 function setTitle(title) {
-  document.querySelector('h1').innerHTML = title
+  get('h1').innerHTML = title
 }
 
 function setActiveFooterIcon(activeClass, buttons) {

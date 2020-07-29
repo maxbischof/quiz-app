@@ -33,7 +33,7 @@ export function addCards(cards, target) {
 }
 
 function bookmarkCard (cardSection, card) {
-  const bookmarkButton = cardSection.querySelector('[data-js=\'bookmark__button\']')
+  const bookmarkButton = get('[data-js=\'bookmark__button\']', cardSection)
   if (card.bookmark === true) {
     bookmarkButton.classList.add('card__bookmark--active')
   } 
@@ -93,8 +93,8 @@ function addCard(card, target) {
 }
 
 function showAnswer(target) {
-  const buttonAnswer = target.querySelector('.answer-button')
-  const answer = target.querySelector('.answer-text')
+  const buttonAnswer = get('.answer-button', target)
+  const answer = get('.answer-text', target)
 
   buttonAnswer.addEventListener('click', () => {
     answer.classList.remove('display-none')
@@ -103,7 +103,7 @@ function showAnswer(target) {
 }
 
 function addTags(tags, target) {
-  const tagsSection = target.querySelector('.tags')
+  const tagsSection = get('.tags', target)
   tags?.forEach((tag) => {
     const span = document.createElement('span')
     span.className = 'card__tag pad-5'
