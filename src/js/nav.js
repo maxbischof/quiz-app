@@ -4,12 +4,12 @@ import bookmarks from './bookmarks'
 
 function nav() {
   const buttons = getAll('.footer__icon')
-  let currentPage = get('[data-js=\'questions\']')
+  let currentPage = get("[data-js='questions']")
 
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     const pageID = button.dataset.js
-    const nextPage = get('[data-js=\'' + pageID + '\']')
-    
+    const nextPage = get("[data-js='" + pageID + "']")
+
     button.addEventListener('click', () => {
       currentPage = changePage(nextPage, currentPage)
       setTitle(capitalizeFirstLetter(pageID))
@@ -35,9 +35,12 @@ function setTitle(title) {
   document.querySelector('h1').innerHTML = title
 }
 
-function setActiveFooterIcon (activeClass, buttons) {
-  buttons.forEach(button => {
-    button.classList.toggle('footer__icon--active', button.dataset.js===activeClass)
+function setActiveFooterIcon(activeClass, buttons) {
+  buttons.forEach((button) => {
+    button.classList.toggle(
+      'footer__icon--active',
+      button.dataset.js === activeClass
+    )
   })
 }
 
