@@ -1,9 +1,8 @@
-import { get } from './utilities'
-import { card } from './card'
+import {addCards} from './card'
+import {createElement} from './utilities'
 
-function bookmarks() {
-  const pageBookmarks = get('[data-js=\'bookmarks\']')
-  card(pageBookmarks)
+export function bookmarks (cards) {
+  const {el} = createElement({type: 'main'})
+  const bookmarkedCards = cards.filter(card => card.bookmark)
+  addCards(bookmarkedCards, el)
 }
-
-export default bookmarks

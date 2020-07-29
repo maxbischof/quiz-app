@@ -1,5 +1,8 @@
 import { header } from './header'
 import { footer } from './footer'
+import { questions } from './questions'
+import { bookmarks } from './bookmarks'
+import { form } from './form'
 
 const cards = [
   {
@@ -17,10 +20,27 @@ const cards = [
 let currentPage = 'questions'
 
 header(currentPage)
-//main()
+questions(cards)
 footer(currentPage, changePage)
 
 function changePage(pageName){
+  document.body.innerHTML = ''
   header(pageName)
+  if(pageName === 'questions') {
+    questions(cards)
+  } else if(pageName === 'bookmarks') {
+    bookmarks(cards)
+  }
+  else if(pageName === 'create') {
+    form(saveCard)
+  }
   footer(pageName, changePage)
+}
+
+export function saveCard (question, answer, tags) {
+  cards.push({question, answer, tags})
+}
+
+export function getCards () {
+  return cards
 }

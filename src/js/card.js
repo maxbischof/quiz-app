@@ -1,30 +1,9 @@
 import { get } from './utilities'
+import { getCards } from './index'
 import arrowImg from '../../img/arrow.png'
 import bookmarkButton from '../../img/bookmark.png'
 
-const cards = [
-  {
-    question: "What's the biggest animal in the world?",
-    answer: 'The blue whale',
-    tags: ['animals', 'nature', 'world record'],
-  },
-  {
-    question: 'Which country is brie cheese originally from?',
-    answer: 'France',
-    tags: ['food', 'culture'],
-  },
-]
-
 const pageQuestions = get('[data-js=\'questions\']')
-
-export function card (target = pageQuestions) {
-  target.innerHTML = ''
-  if (target === pageQuestions) {
-    addCards(cards, target)
-  } else {
-    addCards(cards.filter(card => card.bookmark), target)
-  }
-}
 
 export function addCards(cards, target) {
   cards.forEach((card) => {
@@ -112,12 +91,7 @@ function addTags(tags, target) {
   })
 }
 
-export function saveCard (question, answer, tags) {
-  cards.push({question, answer, tags})
-}
-
 export function showNewestCard (target) {
+  const cards = getCards()
   addCard(cards[cards.length-1], target)
 }
-
-export default card
