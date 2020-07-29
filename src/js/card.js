@@ -109,4 +109,8 @@ export function saveCard (question, answer, tags) {
   cards.push({question, answer, tags})
 }
 
+export function showNewestCard (target) {
+  addCard(cards[cards.length-1], target)
+}
+
 export default card
