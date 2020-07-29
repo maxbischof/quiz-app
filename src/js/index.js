@@ -14,17 +14,13 @@ const cards = [
   },
 ]
 
-let currentPage = 'Questions'
+let currentPage = 'questions'
 
 header(currentPage)
 //main()
 footer(currentPage, changePage)
 
-
 function changePage(pageName){
-  if(pageName==='questions') {
-    quetions()
-  }
-  currentPage = pageName
-  header(currentPage)
+  header(pageName)
+  footer(pageName, changePage)
 }

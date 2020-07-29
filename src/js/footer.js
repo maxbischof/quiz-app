@@ -1,14 +1,14 @@
-import { createElement } from "./utilities"
+import { createElement, getAll, get} from "./utilities"
 import homeIcon from '../../img/home.png'
 import starIcon from '../../img/star.png'
 import editIcon from '../../img/edit.png'
 import womanIcon from '../../img/woman.png'
 
-export function footer (page, changePage) {
+export function footer (currentPage, changePage) {
   const {el} = createElement({type: 'footer'})
   el.innerHTML = `
     <img
-      class="footer__icon footer__icon--active"
+      class="footer__icon"
       src=${homeIcon}
       alt="home"
       data-js="questions"
@@ -32,8 +32,22 @@ export function footer (page, changePage) {
       data-js="profile"
     />
   `
+  const icons = getAll('.footer__icon', el)
+  
+  setActiveFooterIcon(currentPage, icons)
 
-  el.addEventListener('click', event => {
-    changePage(event.target.dataset.js)
-  }) 
+  icons.forEach((button) => {
+    button.addEventListener('click', () => {
+      changePage(button.dataset.js)
+    })
+  })
+}
+
+function setActiveFooterIcon(activeClass, buttons) {
+  buttons.forEach((button) => {
+    button.classList.toggle(
+      'footer__icon--active',
+      button.dataset.js === activeClass
+    )
+  })
 }
