@@ -30,18 +30,18 @@ export function addCards(cards, target) {
     const cardSection = addCard(card, target)
     addTags(card.tags, cardSection)
     showAnswer(cardSection)
-    bookmarkCard(cardSection, cards.indexOf(card), card)
+    bookmarkCard(cardSection, card)
   })
 }
 
-function bookmarkCard (cardSection, index, card) {
+function bookmarkCard (cardSection, card) {
   const bookmarkButton = cardSection.querySelector('[data-js=\'bookmark__button\']')
   if (card.bookmark === true) {
     bookmarkButton.classList.add('card__bookmark--active')
   } 
     
   bookmarkButton.addEventListener('click', () => {
-    cards[index].bookmark = true
+    card.bookmark = !card.bookmark
     bookmarkButton.classList.toggle('card__bookmark--active')
   })
 }
