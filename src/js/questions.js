@@ -1,8 +1,5 @@
 import {createElement} from './utilities'
-import {addCards} from './card'
-import { get } from './utilities'
-import arrowImg from '../../img/arrow.png'
-import bookmarkButton from '../../img/bookmark.png'
+import {addCards} from './cards/cards'
 
 export function questions (cards) {
   const {el} = createElement({type: 'main'})

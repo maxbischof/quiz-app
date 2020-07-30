@@ -1,15 +1,6 @@
-import { get } from './utilities'
-import { getCards } from './index'
-import arrowImg from '../../img/arrow.png'
-import bookmarkButton from '../../img/bookmark.png'
-
-const pageQuestions = get('[data-js=\'questions\']')
-
-export function addCards(cards, target) {
-  cards.forEach((card) => {
-    addCard(card, target)
-  })
-}
+import { get } from '../../utilities'
+import { getCards } from '../../index'
+import arrowImg from '../../../../img/arrow.png'
 
 function bookmarkCard (cardSection, card) {
   const bookmarkButton = get('[data-js=\'bookmark__button\']', cardSection)
@@ -23,7 +14,7 @@ function bookmarkCard (cardSection, card) {
   })
 }
 
-function addCard(card, target) {
+export function addCard(card, target) {
   let cardSection = document.createElement('section')
 
   const unsplashURL = 'https://source.unsplash.com/random' + '/' + Math.floor(Math.random() * 100)

@@ -1,5 +1,5 @@
 import { get } from './utilities'
-import { showNewestCard } from './card'
+import { showNewestCard } from './cards/card/card'
 import {createElement} from './utilities'
 import { saveCard } from './index'
 

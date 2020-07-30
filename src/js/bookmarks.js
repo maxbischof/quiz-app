@@ -1,4 +1,4 @@
-import {addCards} from './card'
+import {addCards} from './cards/cards'
 import {createElement} from './utilities'
 
 export function bookmarks (cards) {
