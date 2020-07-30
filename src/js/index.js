@@ -27,9 +27,9 @@ function changePage(pageName){
   document.body.innerHTML = ''
   header(pageName)
   if(pageName === 'questions') {
-    questions(cards)
+    questions(cards, invertBookmark)
   } else if(pageName === 'bookmarks') {
-    bookmarks(cards)
+    bookmarks(cards, invertBookmark)
   }
   else if(pageName === 'create') {
     form(saveCard)
@@ -43,4 +43,8 @@ export function saveCard (question, answer, tags) {
 
 export function getCards () {
   return cards
+}
+
+function invertBookmark (index) {
+  cards[index].bookmark == !cards[index].bookmark
 }

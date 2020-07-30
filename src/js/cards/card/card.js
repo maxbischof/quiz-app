@@ -4,12 +4,12 @@ import Bookmark from './bookmark/bookmark'
 import Answer from './answer/answer'
 import Tags from './tags/tags'
 
-export function card(cardData) {
+export function card(cardData, index, invertBookmark) {
   const card = document.createElement('section')
   const unsplashURL = 'https://source.unsplash.com/random' + '/' + Math.floor(Math.random() * 100)
-
+  
   card.className = 'card mar-bot-30'
-  card.appendChild(Bookmark())
+  card.appendChild(Bookmark(index, card.bookmark, invertBookmark))
 
   card.insertAdjacentHTML('beforeend', `
     <img
@@ -27,8 +27,6 @@ export function card(cardData) {
     
   card.appendChild(cardText)
 
-  bookmarkCard(card, cardData)
-
   return card
 }
 
@@ -38,14 +36,3 @@ export function showNewestCard (target) {
   addCard(cards[cards.length-1], target)
 }
 
-function bookmarkCard (cardSection, card) {
-  const bookmarkButton = get('[data-js=\'bookmark__button\']', cardSection)
-  if (card.bookmark === true) {
-    bookmarkButton.classList.add('card__bookmark--active')
-  } 
-    
-  bookmarkButton.addEventListener('click', () => {
-    card.bookmark = !card.bookmark
-    bookmarkButton.classList.toggle('card__bookmark--active')
-  })
-}
