@@ -1,7 +1,7 @@
-import { addCard } from './card/card'
+import { card } from './card/card'
 
-export function addCards(cards, target) {
-  cards.forEach((card) => {
-    addCard(card, target)
+export function addCards(cardsData, target) {
+  cardsData.forEach((cardData) => {
+    target.appendChild(card(cardData))
   })
 }

@@ -2,24 +2,11 @@ import { get } from '../../utilities'
 import { getCards } from '../../index'
 import arrowImg from '../../../../img/arrow.png'
 
-function bookmarkCard (cardSection, card) {
-  const bookmarkButton = get('[data-js=\'bookmark__button\']', cardSection)
-  if (card.bookmark === true) {
-    bookmarkButton.classList.add('card__bookmark--active')
-  } 
-    
-  bookmarkButton.addEventListener('click', () => {
-    card.bookmark = !card.bookmark
-    bookmarkButton.classList.toggle('card__bookmark--active')
-  })
-}
-
-export function addCard(card, target) {
-  let cardSection = document.createElement('section')
-
+export function card(cardData) {
+  const card = document.createElement('section')
   const unsplashURL = 'https://source.unsplash.com/random' + '/' + Math.floor(Math.random() * 100)
 
-  cardSection.innerHTML = /*html*/ `
+  card.innerHTML = /*html*/ `
     <svg class="card__bookmark" data-js="bookmark__button" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 512.019 512.019" style="enable-background:new 0 0 512.019 512.019;" xml:space="preserve">
     <path d="M362.676,0H149.343C119.888,0,96.01,23.878,96.01,53.333v448
@@ -54,12 +41,13 @@ export function addCard(card, target) {
       </div>
     </div>
   `
-  cardSection.className = 'card mar-bot-30'
-  target.appendChild(cardSection)
+  card.className = 'card mar-bot-30'
 
-  addTags(card.tags, cardSection)
-  showAnswer(cardSection)
-  bookmarkCard(cardSection, card)
+  addTags(card.tags, card)
+  showAnswer(card)
+  bookmarkCard(card, cardData)
+
+  return card
 }
 
 function showAnswer(target) {
@@ -85,4 +73,16 @@ function addTags(tags, target) {
 export function showNewestCard (target) {
   const cards = getCards()
   addCard(cards[cards.length-1], target)
+}
+
+function bookmarkCard (cardSection, card) {
+  const bookmarkButton = get('[data-js=\'bookmark__button\']', cardSection)
+  if (card.bookmark === true) {
+    bookmarkButton.classList.add('card__bookmark--active')
+  } 
+    
+  bookmarkButton.addEventListener('click', () => {
+    card.bookmark = !card.bookmark
+    bookmarkButton.classList.toggle('card__bookmark--active')
+  })
 }
