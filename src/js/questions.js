@@ -1,7 +1,7 @@
 import {createElement} from './utilities'
-import {addCards} from './cards/cards'
+import {cards} from './cards/cards'
 
-export function questions (cards) {
+export function questions (cardsData) {
   const {el} = createElement({type: 'main'})
-  addCards(cards, el)
+  el.appendChild(cards(cardsData, el))
 }

@@ -1,8 +1,8 @@
-import {addCards} from './cards/cards'
+import {cards} from './cards/cards'
 import {createElement} from './utilities'
 
-export function bookmarks (cards) {
+export function bookmarks (cardsData) {
   const {el} = createElement({type: 'main'})
-  const bookmarkedCards = cards.filter(card => card.bookmark)
-  addCards(bookmarkedCards, el)
+  const bookmarkedCards = cardsData.filter(card => card.bookmark)
+  el.appendChild(cards(bookmarkedCards))
 }

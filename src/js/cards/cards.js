@@ -1,7 +1,12 @@
 import { card } from './card/card'
+import { createElement } from '../utilities'
 
-export function addCards(cardsData, target) {
+export function cards(cardsData) {
+  const {el} = createElement({type: 'section'})
+  
   cardsData.forEach((cardData) => {
-    target.appendChild(card(cardData))
+    el.appendChild(card(cardData))
   })
+
+  return el
 }
