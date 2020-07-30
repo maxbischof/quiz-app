@@ -20,7 +20,7 @@ const cards = [
 let currentPage = 'questions'
 
 header(currentPage)
-questions(cards)
+questions(cards, invertBookmark)
 footer(currentPage, changePage)
 
 function changePage(pageName){
@@ -46,5 +46,5 @@ export function getCards () {
 }
 
 function invertBookmark (index) {
-  cards[index].bookmark == !cards[index].bookmark
+  cards[index].bookmark = !cards[index].bookmark
 }
