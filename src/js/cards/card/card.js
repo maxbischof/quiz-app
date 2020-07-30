@@ -29,10 +29,3 @@ export function card(cardData, index, invertBookmark) {
 
   return card
 }
-
-
-export function showNewestCard (target) {
-  const cards = getCards()
-  addCard(cards[cards.length-1], target)
-}
-

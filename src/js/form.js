@@ -1,7 +1,7 @@
 import { get } from './utilities'
-import { showNewestCard } from './cards/card/card'
+import { card } from './cards/card/card'
 import {createElement} from './utilities'
-import { saveCard } from './index'
+import { saveCard, getCards } from './index'
 
 export function form () {
   const {el} = createElement({type: 'main'})
@@ -47,7 +47,8 @@ export function form () {
     h2.classList.add('feedback__text')
     el.appendChild(h2)
 
-    showNewestCard(el)
+    const cards = getCards()
+    el.appendChild(card(cards[cards.length-1]))
     
     h2.scrollIntoView()
   })
