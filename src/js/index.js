@@ -3,6 +3,7 @@ import { footer } from './footer'
 import { questions } from './questions'
 import { bookmarks } from './bookmarks'
 import { form } from './form'
+import Profile from './profile'
 
 const cards = [
   {
@@ -33,6 +34,9 @@ function changePage(pageName){
   }
   else if(pageName === 'create') {
     form(saveCard)
+  }
+  else if(pageName === 'profile') {
+    Profile()
   }
   footer(pageName, changePage)
 }
